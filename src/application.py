@@ -30,6 +30,26 @@ while True:
 
         else:
             print("O valor informado é inválido.")
+            
+    elif opcao == "s":
+        valor = float(input("Informe o valor do saque: "))
+
+        if valor > saldo:
+            print("Saldo suficiente.")
+
+        elif valor > limite:
+            print("O valor do saque excede o limite de R$ 500,00.")
+
+        elif numero_saques >= LIMITE_SAQUES:
+            print("Quantidade se saques diário excedido.")
+
+        elif valor > 0:
+            saldo -= valor
+            extrato += f"Saque: R$ {valor:.2f}\n"
+            numero_saques += 1
+
+        else:
+            print("O valor informado é inválido.")
 
     elif opcao == "q":
         break
